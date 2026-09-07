@@ -4,9 +4,17 @@ export default function FTContent() {
    return (
       <div className="h-full overflow-y-auto">
         <div className='flex flex-col gap-4'>
-          <h2 className="font-display text-6xl text-white uppercase"> FitApp  </h2>
+          <h2 className="font-display text-6xl text-white uppercase"> FitApp </h2>
           <span> Nutrition & Fitness Tracker+</span>
           <p className="mt-4 text-white/70">  FRONTEND DEVELOPMENT, UX/UI DESIGN  </p>
+          <a 
+            href="https://expo.dev/artifacts/eas/uuMJsKseJVOGlA8tOGhOuqEZ8Q_wBn_5Ekj20Kros0A.apk" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block mt-4 text-white hover:text-gray-500 underline font-medium transition-colors"
+          >
+            Download Android APK
+          </a>
           <p className="mt-4 text-white/70">
             Developed a full-stack fitness tracking application featuring food logging, macro tracking, water intake monitoring, and goal management.
 

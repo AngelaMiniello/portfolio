@@ -8,6 +8,15 @@ export default function CIContent() {
 
           <p className="mt-4 text-white/70"> FULLSTACK DEVELOPMENT, UX/UI DESIGN  </p>
 
+          <a 
+            href="https://pgestion-turnos.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block mt-4 text-white hover:text-gray-500 underline font-medium transition-colors"
+          >
+            Link to CLÍNICA INMACULADO
+          </a>
+
           <p className="mt-4 text-white/70">
             Aplicación web para la gestión de turnos que permite a los usuarios agendar, visualizar y administrar citas de manera eficiente. Implementé interfaces intuitivas con React y lógica backend para el manejo de datos y persistencia.
           </p>

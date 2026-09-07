@@ -5,10 +5,19 @@ export default function GSContent() {
     <div className="h-full overflow-y-auto">
         <div className='flex flex-col gap-4'>
           <h2 className="font-display text-6xl text-white"> GO SAFE </h2>
-
+          
           <p className="mt-4 text-white/70">
             FRONTEND DEVELOPMENT, UX/UI DESIGN
           </p>
+
+          <a 
+            href="https://gosafe-am.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block mt-4 text-white hover:text-gray-500 underline font-medium transition-colors"
+          >
+            Link to GO SAFE
+          </a>
 
           <p className="mt-4 text-white/70">
             Desarrollo de una plataforma web tipo marketplace para conectar usuarios con instructores de actividades outdoor, permitiendo explorar, reservar y gestionar experiencias de forma segura.
