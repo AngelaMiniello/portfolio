@@ -8,7 +8,7 @@ export default function FTContent() {
           <span> Nutrition & Fitness Tracker+</span>
           <p className="mt-4 text-white/70">  FRONTEND DEVELOPMENT, UX/UI DESIGN  </p>
           <a 
-            href="https://expo.dev/artifacts/eas/uuMJsKseJVOGlA8tOGhOuqEZ8Q_wBn_5Ekj20Kros0A.apk" 
+            href="https://github.com/AngelaMiniello/fituus-apk/releases/latest" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block mt-4 text-white hover:text-gray-500 underline font-medium transition-colors"
