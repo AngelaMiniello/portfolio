@@ -1,7 +1,8 @@
 import stickerAtlas from '../../assets/images/stickers/portfolio-stickers.png'
+import fituusLogo from '../../assets/images/fituus/logo.png'
 
 const galleryStickers: Record<string, { position: string; placement: string }> = {
-  'logo.png': { position: '0% 0%', placement: '-bottom-8 -right-7 rotate-[-12deg]' },
+  'ftHome.png': { position: '0% 0%', placement: '-bottom-8 -right-7 rotate-[-12deg]' },
   'ft.register.png': { position: '100% 0%', placement: '-bottom-8 -left-6 rotate-[10deg]' },
   'ftDiary2.png': { position: '0% 100%', placement: '-bottom-9 -right-7 rotate-[8deg]' },
   'ftProfile.png': { position: '100% 100%', placement: '-bottom-8 -left-7 rotate-[-14deg]' },
@@ -14,7 +15,6 @@ const fituusImages = import.meta.glob<string>(
 
 const galleryColumns = [
   [
-    ['logo.png', 'Fituus logo'],
     ['ftHome.png', 'Home — daily calories'],
     ['ftHome2.png', 'Home — nutrition overview'],
     ['ftHome3.png', 'Home — daily activity'],
@@ -50,7 +50,16 @@ export default function FTContent() {
    return (
       <div className="h-full overflow-y-auto">
         <div className='flex flex-col gap-4'>
-          <h2 className="font-display text-6xl text-white uppercase"> FitApp </h2>
+          <div className="flex items-center gap-4">
+            <img
+              src={fituusLogo}
+              alt=""
+              width={1008}
+              height={934}
+              className="h-14 w-14 shrink-0 rounded-2xl bg-[#f1f0e9] p-2 object-contain sm:h-16 sm:w-16"
+            />
+            <h2 className="font-display text-6xl text-white">fituus</h2>
+          </div>
           <span> Nutrition & Fitness Tracker+</span>
           <p className="mt-4 text-white/70">  FRONTEND DEVELOPMENT, UX/UI DESIGN  </p>
           <a 
@@ -72,7 +81,7 @@ export default function FTContent() {
 
           <section
             aria-label="Fituus app gallery"
-            className="mt-10 grid grid-cols-2 items-start gap-2 bg-[#f1f0e9] p-2 sm:gap-3 sm:p-3 md:grid-cols-[1fr_0.85fr_1.1fr_0.9fr]"
+            className="mt-10 grid grid-cols-2 items-start gap-2 p-2 sm:gap-3 sm:p-3 md:grid-cols-[1fr_0.85fr_1.1fr_0.9fr]"
           >
             {galleryColumns.map((column, columnIndex) => (
               <div key={columnIndex} className="flex min-w-0 flex-col gap-2 sm:gap-3">
@@ -83,9 +92,9 @@ export default function FTContent() {
                     alt={`Fituus — ${description}`}
                     loading="lazy"
                     decoding="async"
-                    width={filename === 'logo.png' ? 1008 : 1080}
-                    height={filename === 'logo.png' ? 934 : 2400}
-                    className="block h-auto w-full"
+                    width={1080}
+                    height={2400}
+                    className="block h-auto w-full rounded-[11%/5%]"
                     />
                     {galleryStickers[filename] && (
                       <span
