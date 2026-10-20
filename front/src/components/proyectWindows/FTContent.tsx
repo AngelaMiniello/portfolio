@@ -1,11 +1,16 @@
-import stickerAtlas from '../../assets/images/stickers/portfolio-stickers.png'
+import frappeSticker from '../../assets/images/stickers/ftsticker1.png'
+import workoutSticker from '../../assets/images/stickers/ftsticker2.png'
+import waterSticker from '../../assets/images/stickers/ftsticker3.png'
+import brownieSticker from '../../assets/images/stickers/ftsticker4.png'
+import sneakersSticker from '../../assets/images/stickers/ftsticker5.png'
 import fituusLogo from '../../assets/images/fituus/logo.png'
 
-const galleryStickers: Record<string, { position: string; placement: string }> = {
-  'ftHome.png': { position: '0% 0%', placement: '-bottom-8 -right-7 rotate-[-12deg]' },
-  'ft.register.png': { position: '100% 0%', placement: '-bottom-8 -left-6 rotate-[10deg]' },
-  'ftDiary2.png': { position: '0% 100%', placement: '-bottom-9 -right-7 rotate-[8deg]' },
-  'ftProfile.png': { position: '100% 100%', placement: '-bottom-8 -left-7 rotate-[-14deg]' },
+const galleryStickers: Record<string, { src: string; placement: string }> = {
+  'ftHome.png': { src: frappeSticker, placement: '-bottom-8 -right-7 rotate-[-12deg]' },
+  'ft.register.png': { src: workoutSticker, placement: '-bottom-8 -left-6 rotate-[10deg]' },
+  'ftDiary2.png': { src: waterSticker, placement: '-bottom-9 -right-7 rotate-[8deg]' },
+  'ftProfile.png': { src: sneakersSticker, placement: '-bottom-8 -left-7 rotate-[-14deg]' },
+  'ftHome4.png': { src: brownieSticker, placement: '-bottom-8 -right-7 rotate-[12deg]' },
 }
 
 const fituusImages = import.meta.glob<string>(
@@ -37,8 +42,7 @@ const galleryColumns = [
     ['ftProgress2.png', 'Progress detail'],
   ],
   [
-    ['ftWins.png', 'Achievements'],
-    ['ftWins2.png', 'Achievements detail'],
+    ['ftWins1.png', 'Achievements'],
     ['ftProfile.png', 'Profile'],
     ['ftprofile2.png', 'Profile detail'],
     ['ftConfig.png', 'Settings'],
@@ -97,14 +101,13 @@ export default function FTContent() {
                     className="block h-auto w-full rounded-[11%/5%]"
                     />
                     {galleryStickers[filename] && (
-                      <span
+                      <img
+                        src={galleryStickers[filename].src}
+                        alt=""
                         aria-hidden="true"
-                        className={`pointer-events-none absolute z-10 block aspect-square w-[48%] max-w-36 bg-contain bg-no-repeat drop-shadow-[0_3px_2px_rgba(0,0,0,0.22)] ${galleryStickers[filename].placement}`}
-                        style={{
-                          backgroundImage: `url("${stickerAtlas}")`,
-                          backgroundSize: '200% 200%',
-                          backgroundPosition: galleryStickers[filename].position,
-                        }}
+                        loading="lazy"
+                        decoding="async"
+                        className={`pointer-events-none absolute z-10 block h-auto w-[60%] max-w-44 drop-shadow-[0_3px_2px_rgba(0,0,0,0.22)] ${galleryStickers[filename].placement}`}
                       />
                     )}
                   </div>
