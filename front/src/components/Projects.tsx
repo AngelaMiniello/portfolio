@@ -72,7 +72,7 @@ export default function Projects() {
                 </div>
 
                 <div className="w-1/2">
-                  <h3 className="font-display text-5xl"> FITTUUS </h3>
+                  <h3 className="font-display text-5xl"> fituus </h3>
 
                   <p className="font-body mt-2">  FULL STACK DEVELOPMENT, UX/UI DESIGN  </p>
                 </div>

@@ -18,45 +18,79 @@ const fituusImages = import.meta.glob<string>(
   { eager: true, query: '?url', import: 'default' },
 )
 
-const galleryColumns = [
-  [
-    ['ftHome.png', 'Home — daily calories'],
-    ['ftHome2.png', 'Home — nutrition overview'],
-    ['ftHome3.png', 'Home — daily activity'],
-    ['ftHome4.png', 'Home — daily summary'],
-    ['ft panel.png', 'Main panel'],
-  ],
-  [
-    ['ftLandingNutrition.png', 'Landing — nutrition'],
-    ['ftLandingHydration.png', 'Landing — hydration'],
-    ['ftLandingMovement.png', 'Landing — movement'],
-    ['ft login.png', 'Log in'],
-    ['ft.register.png', 'Create an account'],
-    ['ft set goals.png', 'Set your goals'],
-    ['ftActLevel.png', 'Activity level'],
-    ['ft app icon.png', 'Fituus app icon'],
-  ],
-  [
-    ['ftDiary.png', 'Food diary'],
-    ['ftDiary2.png', 'Food diary — detail'],
-    ['ftDiary3.png', 'Food diary — nutrition'],
-    ['ftPlus.png', 'Add an entry'],
-    ['ftProgress.png', 'Progress overview'],
-    ['ftProgress2.png', 'Progress detail'],
-  ],
-  [
-    ['winsMedals.png', 'Daily wins — medals'],
-    ['winsProgress.png', 'Daily wins — progress'],
-    ['ftProfile.png', 'Profile'],
-    ['ftprofile2.png', 'Profile detail'],
-    ['ftConfig.png', 'Settings'],
-    ['ftConfig2.png', 'Settings detail'],
-  ],
+const gallerySections = [
+  {
+    id: 'getting-started',
+    title: 'Getting started',
+    intro: 'A welcoming introduction to nutrition, hydration, and movement, followed by account creation, login, and personal goal setup.',
+    images: [
+      ['ftLandingNutrition.png', 'Landing — nutrition'],
+      ['ftLandingHydration.png', 'Landing — hydration'],
+      ['ftLandingMovement.png', 'Landing — movement'],
+      ['ft.register.png', 'Create an account'],
+      ['ft login.png', 'Log in'],
+      ['ft set goals.png', 'Set your goals'],
+      ['ftActLevel.png', 'Activity level'],
+      ['ft app icon.png', 'Fituus app icon'],
+    ],
+  },
+  {
+    id: 'home',
+    title: 'Home — your daily overview',
+    intro: 'A clear snapshot of the day, bringing calories, macronutrients, hydration, and activity together in one place.',
+    images: [
+      ['ftHome.png', 'Home — daily calories'],
+      ['ftHome2.png', 'Home — nutrition overview'],
+      ['ftHome3.png', 'Home — daily activity'],
+      ['ftHome4.png', 'Home — daily summary'],
+      ['ft panel.png', 'Main panel'],
+    ],
+  },
+  {
+    id: 'diary',
+    title: 'Diary — small bites, better habits',
+    intro: 'Log meals, explore nutritional details, and keep track of daily intake with a simple food diary.',
+    images: [
+      ['ftDiary.png', 'Food diary'],
+      ['ftDiary2.png', 'Food diary — detail'],
+      ['ftDiary3.png', 'Food diary — nutrition'],
+      ['ftPlus.png', 'Add an entry'],
+    ],
+  },
+  {
+    id: 'progress',
+    title: 'Progress — every step counts',
+    intro: 'Follow changes over time and see how everyday habits contribute to personal goals.',
+    images: [
+      ['ftProgress.png', 'Progress overview'],
+      ['ftProgress2.png', 'Progress detail'],
+    ],
+  },
+  {
+    id: 'wins',
+    title: 'Wins — little victories',
+    intro: 'Celebrate daily check-ins, meals logged, and hydration milestones with encouraging medals and a daily progress board.',
+    images: [
+      ['winsMedals.png', 'Daily wins — medals'],
+      ['winsProgress.png', 'Daily wins — progress'],
+    ],
+  },
+  {
+    id: 'profile',
+    title: 'Profile & settings — make it yours',
+    intro: 'Manage personal information and preferences to keep the experience aligned with individual needs.',
+    images: [
+      ['ftProfile.png', 'Profile'],
+      ['ftprofile2.png', 'Profile detail'],
+      ['ftConfig.png', 'Settings'],
+      ['ftConfig2.png', 'Settings detail'],
+    ],
+  },
 ]
 
 export default function FTContent() {
    return (
-      <div className="h-full overflow-y-auto">
+      <div className="h-full overflow-y-auto pb-10">
         <div className='flex flex-col gap-4'>
           <div className="flex items-center gap-4">
             <img
@@ -87,13 +121,17 @@ export default function FTContent() {
           </p>
         </div>
 
-          <section
-            aria-label="Fituus app gallery"
-            className="mt-10 grid grid-cols-2 items-start gap-2 p-2 sm:gap-3 sm:p-3 md:grid-cols-[1fr_0.85fr_1.1fr_0.9fr]"
-          >
-            {galleryColumns.map((column, columnIndex) => (
-              <div key={columnIndex} className="flex min-w-0 flex-col gap-2 sm:gap-3">
-                {column.map(([filename, description]) => (
+        <div className="mt-12 space-y-16">
+          {gallerySections.map((section) => (
+            <section key={section.id} aria-labelledby={`fituus-${section.id}`}>
+              <div className="mb-6 flex flex-col gap-3">
+                <h3 id={`fituus-${section.id}`} className="font-display text-3xl text-white sm:text-4xl">
+                  {section.title}
+                </h3>
+                <p className="max-w-2xl leading-relaxed text-white/70">{section.intro}</p>
+              </div>
+              <div className="grid grid-cols-2 items-start gap-x-3 gap-y-10 p-2 sm:gap-x-4 md:grid-cols-4">
+                {section.images.map(([filename, description]) => (
                   <div key={filename} className="relative">
                     <img
                     src={fituusImages[`../../assets/images/fituus/${filename}`]}
@@ -117,8 +155,9 @@ export default function FTContent() {
                   </div>
                 ))}
               </div>
-            ))}
-          </section>
+            </section>
+          ))}
+        </div>
     </div>
   )
 }

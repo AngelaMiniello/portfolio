@@ -3,7 +3,7 @@ import clinicSpecialties from '../../assets/images/clinica-inmaculado-especialid
 
 export default function CIContent() {
    return (
-      <div className="h-full overflow-y-auto">
+      <div className="h-full overflow-y-auto pb-8">
         <div className='flex flex-col gap-4'>
           <h2 className="font-display text-6xl text-white">  CLÍNICA INMACULADO </h2>
 
