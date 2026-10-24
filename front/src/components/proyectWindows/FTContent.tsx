@@ -27,6 +27,9 @@ const galleryColumns = [
     ['ft panel.png', 'Main panel'],
   ],
   [
+    ['ftLandingNutrition.png', 'Landing — nutrition'],
+    ['ftLandingHydration.png', 'Landing — hydration'],
+    ['ftLandingMovement.png', 'Landing — movement'],
     ['ft login.png', 'Log in'],
     ['ft.register.png', 'Create an account'],
     ['ft set goals.png', 'Set your goals'],
@@ -42,7 +45,8 @@ const galleryColumns = [
     ['ftProgress2.png', 'Progress detail'],
   ],
   [
-    ['ftWins1.png', 'Achievements'],
+    ['winsMedals.png', 'Daily wins — medals'],
+    ['winsProgress.png', 'Daily wins — progress'],
     ['ftProfile.png', 'Profile'],
     ['ftprofile2.png', 'Profile detail'],
     ['ftConfig.png', 'Settings'],

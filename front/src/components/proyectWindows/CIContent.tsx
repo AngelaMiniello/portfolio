@@ -1,4 +1,5 @@
-import cihome from '../../assets/images/cihome.jpg'
+import clinicHome from '../../assets/images/clinica-inmaculado-home.png'
+import clinicSpecialties from '../../assets/images/clinica-inmaculado-especialidades.png'
 
 export default function CIContent() {
    return (
@@ -23,12 +24,25 @@ export default function CIContent() {
         </div>
 
           {/* contenido del proyecto */}
-          <div>
+          <div className="mt-10 grid grid-cols-1 items-start gap-4 md:grid-cols-2">
             <img
-              src={cihome}
-              className='opacity-80 mt-10 w-1/2'
+              src={clinicHome}
+              alt="Clínica Inmaculado — página de inicio y servicios"
+              loading="lazy"
+              decoding="async"
+              width={1900}
+              height={3555}
+              className="block h-auto w-full rounded-xl"
             />
-            <p></p>
+            <img
+              src={clinicSpecialties}
+              alt="Clínica Inmaculado — especialidades médicas"
+              loading="lazy"
+              decoding="async"
+              width={1902}
+              height={1779}
+              className="block h-auto w-full rounded-xl"
+            />
           </div>
     </div>
   )
