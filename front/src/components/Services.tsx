@@ -21,6 +21,13 @@ const services = [
   },
   {
     number: '03',
+    title: 'MOBILE DEVELOPER',
+    description:
+       'I build mobile apps that turn everyday tasks into simple, intuitive experiences.',
+    skills: ['React Native', 'Expo'],
+  },
+  {
+    number: '04',
     title: 'UI / UX',
     description:
       'I turn ideas into interfaces that feel clear, intentional and alive.',

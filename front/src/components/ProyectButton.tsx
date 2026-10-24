@@ -4,12 +4,14 @@ import gsap from 'gsap'
 interface ProjectButtonProps {
   image: string
   alt: string
+  imageClassName?: string
   onClick: () => void
 }
 
 function ProjectButton({
   image,
   alt,
+  imageClassName = 'object-cover opacity-80',
   onClick,
 }: ProjectButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null)
@@ -51,7 +53,7 @@ function ProjectButton({
         ref={imageRef}
         src={image}
         alt={alt}
-        className="h-64 w-64 rounded-full object-cover opacity-80"
+        className={`h-64 w-64 rounded-full ${imageClassName}`}
       />
 
       <span className="pointer-events-none absolute inset-0 flex items-center justify-center rounded-full bg-black/40 text-sm uppercase tracking-widest text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">

@@ -1,6 +1,6 @@
 import gs from '../assets/images/gs.png'
 import ci from '../assets/images/ci.png'
-import ft from '../assets/images/ft.png'
+import fituusLogo from '../assets/images/fituus/logo.png'
 import { useState } from 'react'
 import ProjectWindow from './ProjectWindow'
 import GSContent from './proyectWindows/GSContent'
@@ -65,8 +65,9 @@ export default function Projects() {
               <div className="flex items-center justify-between">
                 <div className="w-1/2 flex justify-center">
                   <ProjectButton
-                    image={ft}
-                    alt="Clínica Inmaculado"
+                    image={fituusLogo}
+                    alt="Fituus"
+                    imageClassName="bg-white p-10 object-contain"
                     onClick={() => setActiveProject('fituus')}
                   />
                 </div>
@@ -74,7 +75,7 @@ export default function Projects() {
                 <div className="w-1/2">
                   <h3 className="font-display text-5xl"> fituus </h3>
 
-                  <p className="font-body mt-2">  FULL STACK DEVELOPMENT, UX/UI DESIGN  </p>
+                  <p className="font-body mt-2"> MOBILE APP DEVELOPMENT, UX/UI DESIGN  </p>
                 </div>
               </div>
 
